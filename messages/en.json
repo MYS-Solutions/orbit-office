@@ -1,3 +1,25 @@
 {
-    "title": "Welcome to My Website"
+    "brand": "Orbit Office",
+    "navbar": {
+      "offers": "Offers",
+      "about": "About Us",
+      "contact": "Contact"
+    },
+    "hero": {
+      "welcome": "Welcome to Orbit Office",
+      "tagline": "Find your next destination.",
+      "cta": "Get Started"
+    },
+    "about": {
+      "title": "About Us",
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "Check out our latest offers."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Have questions? Get in touch with us."
+    }
 }

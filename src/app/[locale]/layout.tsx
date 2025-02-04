@@ -23,7 +23,7 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body style={{ margin: 0, padding: 0 }}> 
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar/>
+          <Navbar sections={["about", "offers", "contact"]}/>
           <main>{children}</main>
         </NextIntlClientProvider>
       </body>

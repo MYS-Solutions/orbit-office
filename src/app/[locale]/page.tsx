@@ -1,11 +1,14 @@
-import { useTranslations } from 'next-intl';
+import { Container } from '@mui/material';
+import HeroSection from '@/components/Home/HeroSection';
+import AboutSection from '@/components/Home/AboutSection';
+import ContactSection from '@/components/Home/ContactSection';
 
-export default function HomePage() {
-  const t = useTranslations();
-
+export default function HomePage({ params }: { params: { locale: string } }) {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-3xl font-bold">{t('title')}</h1>
-    </main>
+    <Container>
+      <HeroSection/>
+      <AboutSection/>
+      <ContactSection/>
+    </Container>
   );
 }
