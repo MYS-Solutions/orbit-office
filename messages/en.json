@@ -6,9 +6,8 @@
       "contact": "Contact"
     },
     "hero": {
-      "welcome": "Welcome to Orbit Office",
-      "tagline": "Find your next destination.",
-      "cta": "Get Started"
+      "title": "Explore the World",
+      "subtitle": "Tailor-made travel experiences to your dream destinations."
     },
     "about": {
       "title": "About Us",
