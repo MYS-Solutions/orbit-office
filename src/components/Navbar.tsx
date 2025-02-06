@@ -26,7 +26,7 @@ function Navbar({ sections }: { sections: string[] }) {
   };
 
   return (
-    <AppBar position="static" dir="ltr">
+    <AppBar position="fixed" dir="ltr">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -86,7 +86,7 @@ function Navbar({ sections }: { sections: string[] }) {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
