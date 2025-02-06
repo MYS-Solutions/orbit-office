@@ -5,7 +5,7 @@ import ContactSection from '@/components/Home/ContactSection';
 
 export default function HomePage({ params }: { params: { locale: string } }) {
   return (
-    <Container>
+    <Container maxWidth="xl" disableGutters>
       <HeroSection/>
       <AboutSection/>
       <ContactSection/>
