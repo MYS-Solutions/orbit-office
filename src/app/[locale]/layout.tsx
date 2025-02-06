@@ -2,7 +2,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import Navbar from '@/components/Navbar';
+import Navbar  from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ThemeProvider from '@/theme/ThemeProvider';
 
 export default async function LocaleLayout({
   children,
@@ -23,8 +25,11 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body style={{ margin: 0, padding: 0 }}> 
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar sections={["about", "offers", "contact"]}/>
-          <main>{children}</main>
+            <ThemeProvider>
+            <Navbar sections={["about", "offers", "contact"]}/>
+            <main>{children}</main>
+            <Footer/>
+            </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
