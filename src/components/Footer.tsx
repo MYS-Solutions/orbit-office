@@ -1,14 +1,21 @@
-import { Typography, Box } from '@mui/material';
+"use client";
+import { Typography, Box, useTheme } from '@mui/material';
 
-export default function Footer() {
+export function Attribution({description, owner, link}: {description: string, owner: string, link: string}) {
+  const theme = useTheme();
+
   return (
-    <Box sx={{ textAlign: 'center', py: 2, backgroundColor: 'black', color: 'white' }}>
-      <Typography variant="body2">
-        Hero Background image by <a href="https://www.freepik.com/free-vector/realistic-travel-background-with-elements_20852675.htm" 
-        target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>
-          Freepik
-        </a>
-      </Typography>
+    <Typography variant="body2" color="inherit">
+      {description} by <a href={link} target="_blank" rel="noopener noreferrer" style={{color: theme.palette.background.paper}}>{owner}</a>
+    </Typography>
+  );
+}
+
+export function Footer({ children }: { children: React.ReactNode }) {
+  const theme = useTheme();
+  return (
+    <Box component={"footer"} sx={{padding: 2, backgroundColor: theme.palette.text.primary, color: theme.palette.background.default}}>
+      {children}
     </Box>
   );
 }

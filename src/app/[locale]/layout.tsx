@@ -3,7 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Navbar  from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import {Footer, Attribution} from '@/components/Footer';
 import ThemeProvider from '@/theme/ThemeProvider';
 
 export default async function LocaleLayout({
@@ -21,14 +21,17 @@ export default async function LocaleLayout({
 
   const messages = (await getMessages());
 
+  const direction = locale === 'ar' ? 'rtl' : 'ltr';
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={direction}>
       <body style={{ margin: 0, padding: 0 }}> 
         <NextIntlClientProvider locale={locale} messages={messages}>
-            <ThemeProvider>
+            <ThemeProvider dir={direction}>
             <Navbar sections={["about", "offers", "contact"]}/>
             <main>{children}</main>
-            <Footer/>
+            <Footer>
+              <Attribution description="Top of the page background" owner="Freepik" link="https://www.freepik.com/free-vector/realistic-travel-background-with-elements_20852675.htm" />
+            </Footer>
             </ThemeProvider>
         </NextIntlClientProvider>
       </body>
