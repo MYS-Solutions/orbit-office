@@ -14,7 +14,7 @@ export function Attribution({description, owner, link}: {description: string, ow
 export function Footer({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
   return (
-    <Box component={"footer"} sx={{padding: 2, backgroundColor: theme.palette.text.primary, color: theme.palette.background.default}}>
+    <Box dir='ltr' component={"footer"} sx={{padding: 2, backgroundColor: theme.palette.text.primary, color: theme.palette.background.default}}>
       {children}
     </Box>
   );
