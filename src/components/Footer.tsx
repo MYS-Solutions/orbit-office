@@ -6,7 +6,7 @@ export function Attribution({description, owner, link}: {description: string, ow
 
   return (
     <Typography variant="body2" color="inherit">
-      {description} by <a href={link} target="_blank" rel="noopener noreferrer" style={{color: theme.palette.background.paper}}>{owner}</a>
+      {description} by <Typography component='a' href={link} target='_blank' style={{color: theme.palette.background.default}}>{owner}</Typography>
     </Typography>
   );
 }
