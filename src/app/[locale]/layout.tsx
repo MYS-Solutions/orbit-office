@@ -27,7 +27,7 @@ export default async function LocaleLayout({
       <body style={{ margin: 0, padding: 0 }}> 
         <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider dir={direction}>
-            <Navbar sections={["about", "offers", "contact"]}/>
+            <Navbar sections={["about", "services", "offers", "contact"]}/>
             <main>{children}</main>
             <Footer>
               <Attribution description="Top of the page background" owner="Freepik" link="https://www.freepik.com/free-vector/realistic-travel-background-with-elements_20852675.htm" />
