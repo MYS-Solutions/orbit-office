@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useTranslations } from 'next-intl';
 import { Collapse } from '@mui/material';
+import LanguageSwitcher from './LanguageSwitcher';
 
 function Navbar({ sections }: { sections: string[] }) {
   const t = useTranslations();
@@ -17,7 +18,7 @@ function Navbar({ sections }: { sections: string[] }) {
 
   return (
     <AppBar position="fixed" component="nav" sx={{maxWidth: '100vw', justifyContent: 'space-between', flexDirection: { xs: 'column', sm: 'row'}, p: {xs:0, sm:1}}}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: {xs: 0.5, sm: 2} }}>
           <IconButton
             size="large"
             aria-label="Navigation Menu Button"
@@ -33,33 +34,54 @@ function Navbar({ sections }: { sections: string[] }) {
           >
             { showMobileMenu? <CloseIcon />: <MenuIcon /> }
           </IconButton>
-          
-          <AdbIcon sx={{ ml: 2, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: 'flex',
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            {t('brand')}
-          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <AdbIcon/>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                display: 'flex',
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                color: 'inherit',
+                textDecoration: 'none',
+                ":hover": {textDecoration: 'underline'}
+              }}
+            >
+              {t('brand')}
+            </Typography>
+          </Box>
+            <LanguageSwitcher />
           </Box>
           <Box component="ul" area-label="Page Navigation" sx={{ display: {xs: 'none', sm: 'flex'}, alignItems: 'center', justifyContent: 'flex-start', m: 0, p: 0}}> 
             {sections.map((section) => (
               <Button
                 component="a"
+                href={`#${section}`}
                 key={section}
-                sx={{ color: 'white' }}
+                sx={{ color: 'white',
+                  flexShrink: 1,
+                  textWrap: 'nowrap',
+                  "&::after": {
+                      content: '""',
+                      display: "block",
+                      height: 0.1, 
+                      width: "0%",
+                      backgroundColor: "white",
+                      borderRadius: 0.4,
+                      transition: "width 0.3s ease-in-out",
+                      position: "absolute",
+                      bottom: 5,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                  },
+                  "&:hover::after": {
+                    width: "100%", 
+                }, }}
               >
-                {section}
+                {t(`navbar.${section}`)}
               </Button>
             ))}
           </Box>
@@ -67,10 +89,11 @@ function Navbar({ sections }: { sections: string[] }) {
           {sections.map((section) => (
               <Button
                 component="a"
+                href={`#${section}`}
                 key={section}
                 sx={{ color: 'white',  width: '100%' }}
               >
-                {section}
+                {t(`navbar.${section}`)}
               </Button>
             ))}
           </Collapse>
