@@ -4,15 +4,6 @@ import { Direction } from '@mui/material';
 
 const lightTheme = (dir: Direction = "ltr") => createTheme({
   direction: dir,
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 480,  
-      md: 768,
-      lg: 1024,
-      xl: 1280, 
-    },
-  },
   palette: {
     mode: 'light',
     primary: {
