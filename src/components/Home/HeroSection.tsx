@@ -11,9 +11,11 @@ export default function HeroSection() {
 
   return (
     <Box
+      component="section"
       id="hero"
       sx={{
       minHeight: '100vh',
+      maxWidth: '100vw',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -28,9 +30,9 @@ export default function HeroSection() {
         position: 'absolute',
         top: 0,
         left: 0,
+        background: `linear-gradient(to bottom, transparent 99%, ${theme.palette.background.default})`,
         width: '100%',
         height: '100%',
-        background: `linear-gradient(to bottom, transparent 99%, ${theme.palette.background.default})`,
         zIndex: 1,
         boxShadow: null,
       }}
