@@ -5,7 +5,7 @@ export default function AboutSection() {
   const t = useTranslations();
 
   return (
-    <Box id="about" sx={{ py: 8 }}>
+    <Box component="section" id="about">
       <Typography variant="h3">{t('about.title')}</Typography>
       <Typography>{t('about.description')}</Typography>
     </Box>
