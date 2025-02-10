@@ -1,24 +1,41 @@
 {
     "brand": "مكتب اوربت",
     "navbar": {
-      "offers": "Offers",
-      "about": "About Us",
-      "contact": "Contact"
+      "services": "خدماتنا",
+      "offers": "عروضاتنا",
+      "about": "من نحن",
+      "contact": "تواصل معنا"
     },
     "hero": {
       "title": "اكتشف العالم!",
       "subtitle": "سفرات وتجارب مصممة خصيصاً لحاجتك."
     },
     "about": {
-      "title": "About Us",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "title": "من نحن؟",
+      "description": "مكتب اوربت مكرس لجعل السفر سلسًا وممتعًا ومخصصًا. بشغف للاستكشاف والتزام بالخدمة الاستثنائية، نساعد المسافرين على إنشاء رحلات لا تُنسى، سواء كانت للترفيه أو العمل أو المغامرة."
+    },
+    "services": {
+      "title": "خدماتنا",
+      "description": "نقدم مجموعة واسعة من الخدمات لتلبية احتياجاتك السفر.",
+      "flights": {
+        "title": "سفرات",
+        "description": "احجز سفراتك معنا."
+      },
+      "work": {
+        "title": "العمل خارجاً",
+        "description": "نقوم بتأمين الوظائف المناسبة لمهاراتك."
+      },
+      "tours": {
+        "title": "رحلات سياحية",
+        "description": "اكتشف العالم مع رحلاتنا."
+      }
     },
     "offers": {
       "title": "Offers",
       "description": "Check out our latest offers."
     },
     "contact": {
-      "title": "Contact Us",
-      "description": "Have questions? Get in touch with us."
+      "title": "تواصل معنا",
+      "description": "هل لديك أسئلة؟ تواصل معنا."
     }
 }

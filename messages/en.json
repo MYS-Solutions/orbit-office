@@ -1,6 +1,7 @@
 {
     "brand": "Orbit Office",
     "navbar": {
+      "services": "Services",
       "offers": "Offers",
       "about": "About Us",
       "contact": "Contact"
@@ -10,8 +11,24 @@
       "subtitle": "Tailor-made travel experiences to your dream destinations."
     },
     "about": {
-      "title": "About Us",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "title": "Who Are We?",
+      "description": "Orbit Office is dedicated to making travel seamless, enjoyable, and personalized. With a passion for exploration and a commitment to exceptional service, we help travelers create unforgettable journeys, whether for leisure, business, or adventure."
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "We offer a wide range of services to meet your travel needs.",
+      "flights": {
+        "title": "Flights",
+        "description": "Book your flights with us."
+      },
+      "work": {
+        "title": "Work Abroad",
+        "description": "Find the perfect job for your skills."
+      },
+      "tours": {
+        "title": "Tours",
+        "description": "Discover the world with our tours."
+      }
     },
     "offers": {
       "title": "Offers",
