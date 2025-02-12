@@ -2,6 +2,7 @@ import HeroSection from '@/components/Home/HeroSection';
 import AboutSection from '@/components/Home/AboutSection';
 import ContactSection from '@/components/Home/ContactSection';
 import ServicesSection from '@/components/Home/ServicesSection';
+import OffersSection from '@/components/Home/OffersSection';
 import { Container } from '@mui/material';
 import Navbar from '@/components/Navbar';
 import { Footer, Attribution } from '@/components/Footer';
@@ -14,6 +15,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <Container sx={{ px: 2, ">section": { my: 4 } }}>
         <AboutSection/>
         <ServicesSection/>
+        <OffersSection/>
         <ContactSection/>
       </Container>
       <Footer>
