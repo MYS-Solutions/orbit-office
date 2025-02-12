@@ -1,10 +1,8 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-import Navbar  from '@/components/Navbar';
-import {Footer, Attribution} from '@/components/Footer';
 import ThemeProvider from '@/theme/ThemeProvider';
+import { routing } from '@/i18n/routing';
 
 export default async function LocaleLayout({
   children,
@@ -27,11 +25,7 @@ export default async function LocaleLayout({
       <body style={{ margin: 0, padding: 0 }}> 
         <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider dir={direction}>
-            <Navbar sections={["about", "services", "offers", "contact"]}/>
             <main>{children}</main>
-            <Footer>
-              <Attribution description="Top of the page background" owner="Freepik" link="https://www.freepik.com/free-vector/realistic-travel-background-with-elements_20852675.htm" />
-            </Footer>
             </ThemeProvider>
         </NextIntlClientProvider>
       </body>
