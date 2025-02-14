@@ -1,15 +1,13 @@
-"use client";
 import {ReactNode} from 'react';
-import { Card, CardContent, Box, Typography, Avatar, useTheme } from '@mui/material';
+import { Card, CardContent, Box, Typography, Avatar } from '@mui/material';
 import { CardActions, Button } from '@mui/material';
 
 function OfferCard({ icon, name, description }: {icon: ReactNode, name: string, description: string}) {
-    const theme = useTheme();
     return (
         <Card  sx={{width: 300, mt: 1}}>
-            <CardContent sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', ':hover>div>div': {backgroundColor: theme.palette.primary.main}}}>
+            <CardContent sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', ':hover>div>div': {backgroundColor: "primary.main"}}}>
                 <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', mb: 1, gap:1}}>
-                    <Avatar sx={{backgroundColor: theme.palette.secondary.main, transition: 'background-color 0.2s ease-in-out'}}>
+                    <Avatar sx={{backgroundColor: "secondary.main", transition: 'background-color 0.2s ease-in-out'}}>
                         {icon}
                     </Avatar>
                     <Typography variant="h5" component="h5">
