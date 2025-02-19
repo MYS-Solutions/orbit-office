@@ -4,7 +4,9 @@
       "services": "Services",
       "offers": "Offers",
       "about": "About Us",
-      "contact": "Contact"
+      "contact": "Contact",
+      "home": "Home",
+      "message": "Hello, your website lead me to you. Can we have a chat?"
     },
     "hero": {
       "title": "Explore the World",
@@ -31,7 +33,7 @@
       }
     },
     "offers": {
-      "title": "Offers",
+      "title": "Featured Offers",
       "description": "Check out our latest offers."
     },
     "contact": {

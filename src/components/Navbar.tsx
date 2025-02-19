@@ -4,12 +4,12 @@ import { AppBar, Box, IconButton, Typography, Button, Collapse, useTheme } from 
 import { Menu as MenuIcon, Close as CloseIcon, Adb as AdbIcon } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
+import WhatsappButton from './WhatsappButton';
 
 type navLink = { page: string, href: string };
 
 function Navbar({ sections = [], links = [] }: { sections?: string[], links?: navLink[] }) {
   const t = useTranslations();
-  const theme = useTheme();
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
   return (
@@ -58,7 +58,7 @@ function Navbar({ sections = [], links = [] }: { sections?: string[], links?: na
                 href={`#${section}`}
                 key={section}
                 sx={{ 
-                  color: theme.palette.background.default,
+                  color: "background.default",
                   flexShrink: 1,
                   textWrap: 'nowrap',
                   "&::after": {
@@ -66,7 +66,7 @@ function Navbar({ sections = [], links = [] }: { sections?: string[], links?: na
                       display: "block",
                       height: 0.1, 
                       width: "0%",
-                      backgroundColor: theme.palette.background.default,
+                      backgroundColor: "background.default",
                       borderRadius: 0.4,
                       transition: "width 0.3s ease-in-out",
                       position: "absolute",
@@ -88,12 +88,12 @@ function Navbar({ sections = [], links = [] }: { sections?: string[], links?: na
                 component="a"
                 href={link.href}
                 key={link.page}
-                sx={{ color: theme.palette.background.paper, flexShrink: 1, textWrap: 'nowrap', "&::after": {
+                sx={{ color: "background.paper", flexShrink: 1, textWrap: 'nowrap', "&::after": {
                       content: '""',
                       display: "block",
                       height: 0.1, 
                       width: "0%",
-                      backgroundColor: theme.palette.background.paper,
+                      backgroundColor: "background.paper",
                       borderRadius: 0.4,
                       transition: "width 0.3s ease-in-out",
                       position: "absolute",
@@ -109,6 +109,7 @@ function Navbar({ sections = [], links = [] }: { sections?: string[], links?: na
               </Button>
             ))}
           </Box>
+          <WhatsappButton message={t("navbar.message")}/>
           <Collapse area-label="Page Navigation" in={showMobileMenu} timeout="auto" sx={{display: {sm: 'none', xs: 'flex-box'}, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 0, m: 0}}>
           {sections.map((section) => (
               <Button
@@ -127,7 +128,7 @@ function Navbar({ sections = [], links = [] }: { sections?: string[], links?: na
                 href={link.href}
                 key={link.page}
                 onClick={() => setShowMobileMenu(false)}
-                sx={{ color: theme.palette.background.paper, width: '100%' }}
+                sx={{ color: "background.paper", width: '100%' }}
               >
                 {t(`navbar.${link.page}`)}
               </Button>
