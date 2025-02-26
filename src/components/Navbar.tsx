@@ -1,18 +1,14 @@
 "use client";
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import Button from '@mui/material/Button';
-import AdbIcon from '@mui/icons-material/Adb';
+import { AppBar, Box, IconButton, Typography, Button, Collapse, useTheme } from '@mui/material';
+import { Menu as MenuIcon, Close as CloseIcon, Adb as AdbIcon } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
-import { Collapse } from '@mui/material';
 import LanguageSwitcher from './LanguageSwitcher';
+import WhatsappButton from './WhatsappButton';
 
-function Navbar({ sections }: { sections: string[] }) {
+type navLink = { page: string, href: string };
+
+function Navbar({ sections = [], links = [] }: { sections?: string[], links?: navLink[] }) {
   const t = useTranslations();
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
@@ -61,7 +57,8 @@ function Navbar({ sections }: { sections: string[] }) {
                 component="a"
                 href={`#${section}`}
                 key={section}
-                sx={{ color: 'white',
+                sx={{ 
+                  color: "background.default",
                   flexShrink: 1,
                   textWrap: 'nowrap',
                   "&::after": {
@@ -69,7 +66,7 @@ function Navbar({ sections }: { sections: string[] }) {
                       display: "block",
                       height: 0.1, 
                       width: "0%",
-                      backgroundColor: "white",
+                      backgroundColor: "background.default",
                       borderRadius: 0.4,
                       transition: "width 0.3s ease-in-out",
                       position: "absolute",
@@ -85,15 +82,55 @@ function Navbar({ sections }: { sections: string[] }) {
               </Button>
             ))}
           </Box>
+          <Box component="ul" area-label="Website Navigation" sx={{ display: {xs: 'none', sm: 'flex'}, alignItems: 'center', justifyContent: 'flex-start', m: 0, p: 0}}> 
+            {links.map((link) => (
+              <Button
+                component="a"
+                href={link.href}
+                key={link.page}
+                sx={{ color: "background.paper", flexShrink: 1, textWrap: 'nowrap', "&::after": {
+                      content: '""',
+                      display: "block",
+                      height: 0.1, 
+                      width: "0%",
+                      backgroundColor: "background.paper",
+                      borderRadius: 0.4,
+                      transition: "width 0.3s ease-in-out",
+                      position: "absolute",
+                      bottom: 5,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                  },
+                  "&:hover::after": {
+                    width: "100%", 
+                }}}
+              >
+                {t(`navbar.${link.page}`)}
+              </Button>
+            ))}
+          </Box>
+          <WhatsappButton message={t("navbar.message")}/>
           <Collapse area-label="Page Navigation" in={showMobileMenu} timeout="auto" sx={{display: {sm: 'none', xs: 'flex-box'}, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 0, m: 0}}>
           {sections.map((section) => (
               <Button
                 component="a"
                 href={`#${section}`}
                 key={section}
+                onClick={() => setShowMobileMenu(false)}
                 sx={{ color: 'white',  width: '100%' }}
               >
                 {t(`navbar.${section}`)}
+              </Button>
+            ))}
+            {links.map((link) => (
+              <Button
+                component="a"
+                href={link.href}
+                key={link.page}
+                onClick={() => setShowMobileMenu(false)}
+                sx={{ color: "background.paper", width: '100%' }}
+              >
+                {t(`navbar.${link.page}`)}
               </Button>
             ))}
           </Collapse>

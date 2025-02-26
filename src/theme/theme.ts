@@ -14,7 +14,7 @@ const lightTheme = (dir: Direction = "ltr") => createTheme({
     },
     background: {
       default: '#f6f5f2',
-      paper: '#ede9d5',
+      paper: '#ebe9df',
     },
     text: {
       primary: '#133a51', 

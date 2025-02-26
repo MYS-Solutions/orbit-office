@@ -4,7 +4,9 @@
       "services": "خدماتنا",
       "offers": "عروضاتنا",
       "about": "من نحن",
-      "contact": "تواصل معنا"
+      "contact": "تواصل معنا",
+      "home": "الصفحة الرئيسية",
+      "message": "مرحبًا، أدى موقع الويب الخاص بكم بي إليك. هل يمكننا الدردشة؟"
     },
     "hero": {
       "title": "اكتشف العالم!",
@@ -31,8 +33,8 @@
       }
     },
     "offers": {
-      "title": "Offers",
-      "description": "Check out our latest offers."
+      "title": "عروضات متاحة",
+      "description": "تحقق من عروضاتنا الأخيرة."
     },
     "contact": {
       "title": "تواصل معنا",
